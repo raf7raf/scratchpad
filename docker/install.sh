@@ -1,5 +1,5 @@
 #!/bin/bash
-# Docker installation script for CentOS 7.2
+# Docker installation script for CentOS 7.2 - requires user with sudo
 # Stolen from https://docs.docker.com/engine/installation/linux/centos/
 
 echo -e "\n-----------------"
@@ -82,3 +82,5 @@ fi
 echo -e "\n---------------------------"
 echo -e "Docker installion complete!"
 echo -e "---------------------------\n"
+
+exit 0
