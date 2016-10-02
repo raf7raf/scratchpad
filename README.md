@@ -1,2 +1,2 @@
-# assorted_snippets
-Random Python snippets
+# scratchpad
+Snippets that don't deserve their own repo
