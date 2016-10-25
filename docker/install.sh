@@ -11,6 +11,9 @@ function destroy {
 	sudo systemctl stop docker > /dev/null 2>&1
         sudo yum -y remove docker-engine > /dev/null 2>&1
         sudo rm -f /etc/yum.repos.d/docker.repo > /dev/null 2>&1
+	sudo rm -f /usr/local/bin/docker-compose > /dev/null 2>&1
+	sudo rm -f /usr/local/bin/docker-machine > /dev/null 2>&1
+	
 	exit 1
 }
 
@@ -77,6 +80,24 @@ if [ $? -eq 0 ]; then
 	echo "Adding $USERNAME to docker group"
 	sudo usermod -aG docker $USERNAME
 	echo -e "\nPlease log out and in again to run Docker without sudo\n"
+fi
+
+# Install docker-compose
+sudo curl -L https://github.com/docker/machine/releases/download/v0.8.2/docker-machine-`uname -s`-`uname -m` >/usr/local/bin/docker-machine && \ chmod +x /usr/local/bin/docker-machine
+
+# Check compose installed correctly
+if [[ $(docker-compose --version | grep "docker-compose") ]]; then
+	echo -e "docker-compose successfully installed!"
+else
+	destroy
+fi
+
+# Install docker-machine
+sudo curl -L https://github.com/docker/machine/releases/download/v0.8.2/docker-machine-`uname -s`-`uname -m` >/usr/local/bin/docker-machine && \ chmod +x /usr/local/bin/docker-machine
+if [[ $(docker-machine --version | grep "docker-machine") ]]; then
+	echo -e "docker-machine successfully installed!"
+else
+	destroy
 fi
 
 echo -e "\n---------------------------"
