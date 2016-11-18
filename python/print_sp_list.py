@@ -16,6 +16,15 @@ def main():
     password = getpass.getpass()
     list_url = raw_input("URL of SPO list:  ")
 
+    # Load SAML XML file into memory for token request
+    with open('spo_soap.xml', 'r') as fin:
+        saml = fin.read()
+    fin.closed
+
+    # Set username and password in memory
+    saml = saml.replace('[username]', user)
+    saml = saml.replace('[password]', password)
+
     # Validate URL and extract SharePoint Online login URL
     url = urlparse(list_url)
 
@@ -24,8 +33,7 @@ def main():
         sys.exit(1)
 
     # Retrieve token from SharePoint Online Security Token Service
-    token = request.post(spo_auth_url, headers=headers)
-
+    #token = request.post(spo_auth_url, headers=headers)
 
 if __name__ == "__main__":
         main()
