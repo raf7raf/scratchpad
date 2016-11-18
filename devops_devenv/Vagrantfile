@@ -1,0 +1,21 @@
+Vagrant.configure("2") do |config|
+  config.vm.box = "centos/7"
+  config.vm.network "private_network", type: "dhcp"
+
+  # Local development environment with Ansible and Python dependancies
+  config.vm.define "devenv" do |devenv|
+    devenv.vm.provision "ansible" do |ansible|
+      ansible.install_mode = :pip
+      ansible.version = "2.2.0.0"
+      ansible.playbook = "devops_devenv.yml"
+    end
+  end
+
+  # Ansible dynamic inventory stored in MySQL database
+  config.vm.define "inventory_db" do |inventory_db|
+    inventory_db.vm.provision "ansible" do |ansible|
+      ansible.install_mode = :pip
+      ansible.version = "2.2.0.0"
+      ansible.playbook = "inventory_db.yml"
+    end
+  end
