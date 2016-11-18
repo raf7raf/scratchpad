@@ -28,15 +28,13 @@ def main():
     # Validate URL and extract SharePoint Online login URL
     url = urlparse(list_url)
 
-    if url.scheme is not "https" or url.netloc is None:
+    if url.netloc is None:
         print "Invalid or malformed URL provided.  Aborting"
         sys.exit(1)
 
     # Retrieve token from SharePoint Online Security Token Service
     headers = {'Content-Type': 'application/xml'}
     token = requests.post(spo_auth_url, data=saml, headers=headers)
-    print token.text
-    print token.status_code
 
 if __name__ == "__main__":
         main()
