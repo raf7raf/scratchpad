@@ -33,7 +33,10 @@ def main():
         sys.exit(1)
 
     # Retrieve token from SharePoint Online Security Token Service
-    #token = request.post(spo_auth_url, headers=headers)
+    headers = {'Content-Type': 'application/xml'}
+    token = requests.post(spo_auth_url, data=saml, headers=headers)
+    print token.text
+    print token.status_code
 
 if __name__ == "__main__":
         main()
