@@ -7,6 +7,8 @@ Vagrant.configure("2") do |config|
 
 # sync local vagrant directory to nginx root
   config.vm.synced_folder ".", "/usr/share/nginx/html", type: "virtualbox"
+  config.vm.provision "shell",
+    inline: "yum install nginx && chkconfig nginx on"
 
 # set virtualbox options
   config.vm.provider "virtualbox" do |v|
