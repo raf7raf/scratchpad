@@ -4,4 +4,17 @@ Vagrant.configure("2") do |config|
   config.vm.box = "centos/7"
   config.vm.hostname = "nginx.ws"
   config.vm.network "public_network", ip: "192.168.1.69"
+
+# sync local vagrant directory to nginx root
+  config.vm.synced_folder ".", "/usr/share/nginx/html", type: "virtualbox"
+
+# set virtualbox options
+  config.vm.provider "virtualbox" do |v|
+    v.name = "nginx@192.168.1.69"
+    v.customize [
+      "modifyvm", :id,
+      "--cpuexecutioncap", "25",
+      "--memory", "256",
+    ]
+  end
 end
