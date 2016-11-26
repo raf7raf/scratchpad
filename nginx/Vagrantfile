@@ -1,5 +1,5 @@
 # nginx webserver running on CentOS 7
-# Requires vbguest due to not included in official box
+# Requires vbguest due guest additions to not included in official box
 # vagrant plugin install vagrant-vbguest
 
 Vagrant.configure("2") do |config|
