@@ -1,7 +1,7 @@
-# nginx webserver running on Ubuntu 14 64-bit
+# nginx webserver running on CentOS 6
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "ubuntu/trusty64"
+  config.vm.box = "centos/6"
   config.vm.hostname = "nginx.ws"
   config.vm.network "private_network", type: "dhcp"
   config.ssh.insert_key = false
@@ -9,7 +9,7 @@ Vagrant.configure("2") do |config|
 # sync local vagrant directory to nginx root, install and enable nginx
   config.vm.synced_folder ".", "/usr/share/nginx/html", type: "virtualbox"
   config.vm.provision "shell",
-    inline: "apt-get install nginx && update-rc.d nginx defaults"
+    inline: "yum install nginx && chkconfig nginx on"
 
 # set virtualbox options
   config.vm.provider "virtualbox" do |v|
