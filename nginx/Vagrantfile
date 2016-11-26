@@ -3,8 +3,8 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "centos/7"
   config.vm.hostname = "nginx.ws"
-  config.vm.network "public_network", ip: "192.168.1.69"
-  config.ssh.insert_key = "true"
+  config.vm.network "private_network", type: "dhcp"
+  config.ssh.insert_key = false
 
 # sync local vagrant directory to nginx root, install and enable nginx
   config.vm.synced_folder ".", "/usr/share/nginx/html", type: "virtualbox"
@@ -13,7 +13,7 @@ Vagrant.configure("2") do |config|
 
 # set virtualbox options
   config.vm.provider "virtualbox" do |v|
-    v.name = "nginx@192.168.1.69"
+    v.name = "nginx.ws"
     v.customize [
       "modifyvm", :id,
       "--cpuexecutioncap", "25",
