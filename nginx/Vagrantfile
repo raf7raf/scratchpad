@@ -6,3 +6,4 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell",
     run: "always",
     inline: "sudo yum install nginx && chkconfig nginx on"
+end
