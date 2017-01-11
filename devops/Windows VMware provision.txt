@@ -1,0 +1,28 @@
+Template-Win2012-R2-SE
+Template-Win2012-R2-DC
+Template-W28-R2-SE
+
+Mk-WIN-Cluster
+
+Inventory - Customisation scripts
+
+Windows Server KMS - 2008/2012
+SIS wokrgroup - DMZ / ad.sis.tv
+
+Network interface needs to be on Group Dev to join AD
+
+Computersde
+Edit VM - hardware Network
+Reboot and joins domain
+
+VMtools part of base image
+Group policy - AD firewall - Firewall needs to be disabled DMZ
+Local users - AD accounts - Local admins required
+
+AV when in AD - not in DMZ.  Inastalling updates
+
+Nobody in RDP group, add into RDP group
+Snow - inventory licensing audit.  Third party. 
+mkpv-grp-issvr1.ad.sis.tv 
+
+IIS / File / SQL

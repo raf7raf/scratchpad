@@ -1,0 +1,22 @@
+
+mdscmd addcustomer Cust_ID -n
+send_command –s Cust_CMA –u admin –p adminpw –o db_change_since_last_save
+create host_plain host-10
+modify network_objects host-10 ipaddr 192.0.2.10
+modify network_objects host-10 comments "Created by fwadmin with dbedit" 
+addelement network_objects host-group '' network_objects:host-10
+update_all
+savedb
+
+sldv-grp-dowsv1.sis.tv
+
+
+unset TMOUT
+dbedit -local (-u -s)
+create user testuser1
+print users testuser1
+modify users testusers userc:IKE :isakmp.encmethods DES
+$program guidbedit
+$FWDIR/conf
+object_5_0_0
+modify n_o color blue
