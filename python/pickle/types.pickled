@@ -1,0 +1,35 @@
+(dp1
+S'AComplex'
+p2
+c__builtin__
+complex
+p3
+(F0
+F126
+tRp4
+sS'ADict'
+p5
+S"{ 'Rock': 'Draw', 'Paper': 'Win', 'Scissors': 'Lose' }"
+p6
+sS'AString'
+p7
+S'The knights that say nee'
+p8
+sS'ATuple'
+p9
+S"( 'Mario', 'Luigi', 'Bowser', 'Princess Toadstool' )"
+p10
+sS'AList'
+p11
+S"[ 'Wolverine', 'Dr X', 'Cyclops', 'Storm', 'Toad' ]"
+p12
+sS'AFloat'
+p13
+F3.1415926535900001
+sS'AChar'
+p14
+S'x'
+sS'AnInt'
+p15
+I42
+s.

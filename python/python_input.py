@@ -2,6 +2,5 @@
 
 # Using python input
 
-print("Hello, what's your name")
-userin = input()
-print("Hello " + userin)
+userin = raw_input("Hello, what's your name:  ")
+print("Hello %s" % userin)
