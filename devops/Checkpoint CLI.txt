@@ -7,10 +7,6 @@ modify network_objects host-10 comments "Created by fwadmin with dbedit"
 addelement network_objects host-group '' network_objects:host-10
 update_all
 savedb
-
-sldv-grp-dowsv1.sis.tv
-
-
 unset TMOUT
 dbedit -local (-u -s)
 create user testuser1
