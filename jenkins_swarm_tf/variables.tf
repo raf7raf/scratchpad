@@ -6,6 +6,6 @@ variable "aws_region" {
 variable "aws_amis" {
   description = "Vanilla Ubuntu 14.04 LTS AMI"
   default = {
-    "eu-west-1" = "ami-5e63d13e"
+    "eu-west-1" = "ami-a192bad2"
   }
 }
