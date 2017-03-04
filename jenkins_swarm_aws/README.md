@@ -11,10 +11,10 @@ By default this script will only provision free-tier eligable resources however 
 
 In production environments it is likely you will require a minimum of a m4.large instance for the master and as many CPU's you can afford for the slaves.
 
-Throwing more resources at Jenkins may not speed it up.  Benchmark, benchmark, benchmark!  [This is a great article about some of things you can do to speed up your Jenkis CI pipeline]<https://ashishparkhi.com/2014/07/27/on-a-quest-of-reducing-jenkins-ci-build-time/>
+Throwing more resources at Jenkins may not speed it up.  Benchmark, benchmark, benchmark!  [This is a great article about some of things you can do to speed up your Jenkis CI pipeline] (https://ashishparkhi.com/2014/07/27/on-a-quest-of-reducing-jenkins-ci-build-time/)
 
 ## Lifecycle management
-You will want to make sure you are backing up important files in $JENKINS_HOME on the Jenkins master.  [The documenation for this is a good starting point]<https://wiki.jenkins-ci.org/display/JENKINS/Administering+Jenkins>
+You will want to make sure you are backing up important files in $JENKINS_HOME on the Jenkins master.  [The documenation for this is a good starting point](https://wiki.jenkins-ci.org/display/JENKINS/Administering+Jenkins)
 
 All build data is aggregated on the master therefore the lifecycle of a slave node can be considered transient and they can easily be created/destroyed as and when demand changes.
 
