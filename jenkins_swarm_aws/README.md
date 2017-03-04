@@ -3,9 +3,7 @@
 Provision Jenkins swarm using Terraform and perform inline configuration to install Jenkins/Swarm plugin
 
 ## Production usage
-This script is only intended to be used as an example and has not been production h
-ardened.  Joining your Jenkins master to the public internet with no access control
- should not done, this is only to demonstrate the Jenkins Swarm functionality.
+This provision script is not a intended to be used in a production environment and is only to demonstrate the Jenkins Swarm functionality.
 
 ## Sizing Jenkins
 
