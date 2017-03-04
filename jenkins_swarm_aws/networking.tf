@@ -4,7 +4,7 @@ resource "aws_vpc" "jenkins_swarm" {
 
 resource "aws_subnet" "jenkis_swarm" {
   vpc_id = "${aws_vpc.jenkins_swarm.id}"
-  cidr_block = "10.0.0.0/16"
+  cidr_block = "10.123.0.1/24"
   availability_zone = "eu-west-1a"
 }
 
@@ -37,3 +37,5 @@ resource "aws_network_interface" "slave_nic${count.index}" {
         device_index = 1
     }
 }
+
+
