@@ -18,4 +18,4 @@ You will want to make sure you are backing up important files in $JENKINS_HOME o
 
 All build data is aggregated on the master therefore the lifecycle of a slave node can be considered transient and they can easily be created/destroyed as and when demand changes.
 
-Public clouds also provide auto-scaling ability which is excellent for building up and tearing down slave instances when your CI pipeline has a predictable usage pattern.
+Most public clouds also provide the ability to auto-scale systems horizontally which is excellent for building up and tearing down slave instances when your CI pipeline has a predictable usage pattern.
